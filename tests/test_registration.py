@@ -36,4 +36,4 @@ class TestRegistration:
         driver.find_element(*AuthPageLocators.REGISTER_BUTTON).click()
         
         error = wait.until(EC.visibility_of_element_located(AuthPageLocators.INCORRECT_PASSWORD_ERROR))
-        assert error.is_displayed()
+        assert error.is_displayed()"# develop branch" 

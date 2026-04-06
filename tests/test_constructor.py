@@ -22,4 +22,4 @@ class TestConstructor:
         wait.until(EC.element_to_be_clickable(MainPageLocators.FILLINGS_TAB)).click()
         wait.until(EC.element_to_be_clickable(MainPageLocators.BUNS_TAB)).click()
         active_tab = wait.until(EC.visibility_of_element_located(MainPageLocators.ACTIVE_TAB))
-        assert "Булки" in active_tab.text or "Булка" in active_tab.text
+        assert "Булки" in active_tab.text or "Булка" in active_tab.text"# develop branch" 

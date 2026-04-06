@@ -46,4 +46,4 @@ class AccountPageLocators:
     
     ORDER_HISTORY_LINK = (By.XPATH, "//a[text()='История заказов']")
     
-    LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выход']")
+    LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выход']")"# develop branch" 

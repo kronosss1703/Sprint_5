@@ -18,4 +18,4 @@ def generate_short_password():
 
 def generate_name():
     name = ''.join(random.choices(string.ascii_letters, k=6))
-    return name
+    return name"# develop branch" 

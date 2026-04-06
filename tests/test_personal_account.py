@@ -55,4 +55,4 @@ class TestPersonalAccount:
         wait.until(EC.visibility_of_element_located(AccountPageLocators.PROFILE_LINK))
         wait.until(EC.element_to_be_clickable(MainPageLocators.LOGO)).click()
         order_button = wait.until(EC.visibility_of_element_located(MainPageLocators.ORDER_BUTTON))
-        assert order_button.is_displayed()
+        assert order_button.is_displayed()"# develop branch" 
