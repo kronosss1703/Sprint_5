@@ -2,7 +2,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from locators import MainPageLocators, AuthPageLocators
 from data_generators import generate_unique_email, generate_password, generate_short_password, generate_name
-
+#1
 
 class TestRegistration:
     
@@ -37,3 +37,4 @@ class TestRegistration:
         
         error = wait.until(EC.visibility_of_element_located(AuthPageLocators.INCORRECT_PASSWORD_ERROR))
         assert error.is_displayed()"# develop branch" 
+#1

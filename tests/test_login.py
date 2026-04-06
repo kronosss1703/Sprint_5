@@ -2,7 +2,7 @@ import pytest
 from selenium.webdriver.support import expected_conditions as EC
 from locators import MainPageLocators, AuthPageLocators
 from data_generators import generate_unique_email, generate_password, generate_name
-
+#1
 
 class TestLogin:
     

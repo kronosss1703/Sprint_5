@@ -18,7 +18,7 @@ class MainPageLocators:
     FILLINGS_TAB = (By.XPATH, "//span[text()='Начинки']/parent::div")
     
     ACTIVE_TAB = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current')]")
-
+#1
 
 class AuthPageLocators:
     
