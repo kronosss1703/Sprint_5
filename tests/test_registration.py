@@ -37,4 +37,4 @@ class TestRegistration:
         
         error = wait.until(EC.visibility_of_element_located(AuthPageLocators.INCORRECT_PASSWORD_ERROR))
         assert error.is_displayed()"# develop branch" 
-#1
+#1"# " 
