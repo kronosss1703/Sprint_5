@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
-#1
 
 @pytest.fixture
 def driver():
@@ -14,8 +13,6 @@ def driver():
     yield driver
     driver.quit()
 
-
 @pytest.fixture
 def wait(driver):
-    return WebDriverWait(driver, 15)"# develop branch" 
-"# " 
+    return WebDriverWait(driver, 15)
