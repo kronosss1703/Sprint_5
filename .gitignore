@@ -1,29 +1,8 @@
-# Virtual environment
 venv/
-env/
-ENV/
-
-# IDE
-.vscode/
-.idea/
-*.iml
-
-# Python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.Python
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Selenium drivers (автоматически скачиваются webdriver-manager)
+.vscode/
+.idea/
 chromedriver.exe
 geckodriver.exe
-
-# OS files
 .DS_Store
-Thumbs.db
