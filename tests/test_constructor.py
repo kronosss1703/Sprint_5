@@ -13,6 +13,9 @@ class TestConstructor:
         assert "Начинки" in active_tab.text
 
     def test_switch_to_buns_tab(self, driver, wait):
-        wait.until(EC.element_to_be_clickable(MainPageLocators.BUNS_TAB)).click()
+        wait.until(EC.element_to_be_clickable(MainPageLocators.SAUCES_TAB)).click()
+        wait.until(EC.visibility_of_element_located(MainPageLocators.ACTIVE_TAB))
+        buns_tab = wait.until(EC.presence_of_element_located(MainPageLocators.BUNS_TAB))
+        driver.execute_script("arguments[0].click();", buns_tab)
         active_tab = wait.until(EC.visibility_of_element_located(MainPageLocators.ACTIVE_TAB))
         assert "Булки" in active_tab.text
