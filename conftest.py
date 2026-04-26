@@ -13,6 +13,20 @@ from selenium.webdriver.support import expected_conditions as EC
 def generate_unique_email():
     return f"test_{int(time.time() * 1000)}_{random.randint(10000, 99999)}@test.ru"
 
+def register_user(driver, wait, email, password, name):
+    driver.get(Urls.REGISTER_URL)
+    wait.until(EC.visibility_of_element_located(AuthPageLocators.NAME_INPUT)).send_keys(name)
+    driver.find_element(*AuthPageLocators.EMAIL_INPUT).send_keys(email)
+    driver.find_element(*AuthPageLocators.PASSWORD_INPUT).send_keys(password)
+    driver.find_element(*AuthPageLocators.REGISTER_BUTTON).click()
+    wait.until(EC.visibility_of_element_located(AuthPageLocators.LOGIN_BUTTON))
+
+def login_user(driver, wait, email, password):
+    wait.until(EC.element_to_be_clickable(AuthPageLocators.LOGIN_BUTTON)).click()
+    wait.until(EC.visibility_of_element_located(AuthPageLocators.EMAIL_INPUT)).send_keys(email)
+    driver.find_element(*AuthPageLocators.PASSWORD_INPUT).send_keys(password)
+    driver.find_element(*AuthPageLocators.LOGIN_BUTTON).click()
+
 @pytest.fixture
 def driver():
     service = Service(ChromeDriverManager().install())
@@ -31,15 +45,5 @@ def test_user(driver, wait):
     email = generate_unique_email()
     password = "test123"
     name = f"User_{random.randint(1000, 9999)}"
-    
-    driver.get(Urls.REGISTER_URL)
-    wait.until(EC.visibility_of_element_located(AuthPageLocators.NAME_INPUT)).send_keys(name)
-    driver.find_element(*AuthPageLocators.EMAIL_INPUT).send_keys(email)
-    driver.find_element(*AuthPageLocators.PASSWORD_INPUT).send_keys(password)
-    driver.find_element(*AuthPageLocators.REGISTER_BUTTON).click()
-    
-    time.sleep(3)
-    
-    yield {"email": email, "password": password, "name": name}
-    
-    driver.get(Urls.BASE_URL)
+    register_user(driver, wait, email, password, name)
+    return {"email": email, "password": password, "name": name}
